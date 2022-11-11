@@ -97,6 +97,7 @@ const handleLocation = async (path) => {
     const route = routes[path];
     const html = await fetch(route).then((data) => data.text());
     document.getElementById("main-page").innerHTML = html;
+
     if(path==="/Employee ReportingPage")
     {
         userlist();   
@@ -107,23 +108,9 @@ const handleLocation = async (path) => {
     }
     else if (path === "/Employee TimeBookingPage") {
         initCalender();
+        displayTimesheet();
     }
-    // $.fn.dataTable.ext.buttons.alert = {
-    //     className: 'buttons-alert',
-     
-    //     action: function ( e, dt, node, config ) {
-    //         alert( this.text() );
-    //     }
-    // };
-
-    // $.fn.dataTable.ext.buttons.search = {
-    //     className: 'buttons-alert',
-     
-    //     action: function ( e, dt, node, config ) {
-    //         alert( "Searching ");
-    //     }
-    // };
-
+   
 };
 
 // window.onpopstate = handleLocation;

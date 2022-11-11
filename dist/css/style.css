@@ -65,7 +65,11 @@ input[type="text"][disabled]{
         font-size:  16px;
     }
 }
-
+/* Employee Timesheet Booking Page */
+.myClass1 {
+    display: none; ;
+}
+    /* size: 2rem; */
 /* .dataTables_wrapper .dt-buttons {
     display: flex;
     justify-content: left; 

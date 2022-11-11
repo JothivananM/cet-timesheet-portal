@@ -9,8 +9,7 @@ function initCalender() {
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new Calendar(calendarEl, {
-
-    height: 600,
+    height:570,
     locale:temp,
     eventTimeFormat: { // like '14:30:00'
         hour: '2-digit',
@@ -30,13 +29,12 @@ function initCalender() {
         editable: true,
         initialView: 'dayGridMonth',
         eventMaxStack: 1,
-        // eventOrder: 'title',
         initialDate: '2022-11-22',
     events: [
         {
         title  : 'event1',
         start  : '2022-11-02',
-        allDay : false 
+        allDay : false ,
         },
         {
         
@@ -68,9 +66,10 @@ function initCalender() {
         
     //   }
     // },
-    // eventColor: '#3fe26da7',
-    // eventTextColor: '#3474eb',
-    // eventSize:2,
+    eventOverlap:false,
+    eventColor: 'red',
+    eventTextColor: 'red',
+    eventSize:2,
     // eventClick: function(info) {
     //   alert('Event: ' + info.event.title);
     //   // change the border color just for fun
@@ -83,9 +82,26 @@ function initCalender() {
     themeSystem: 'bootstrap',
     //Random default events
     
-    editable  : true,
+    editable  : false,
     droppable : false
     });
 
     calendar.render();
+}
+
+$('.fc-title').css('color', 'red');
+
+function displayTimesheet() {
+    
+    $.ajax({
+        type: "GET",
+        url: "https://r9mjde4m5j.execute-api.eu-central-1.amazonaws.com/mock/employeebookedlist?todate=sunt",
+        dataType: "json",
+        success: function(successdata) {
+           console.log("object", successdata);
+        },
+        error: function (error) {
+            alert('error; '+(error));
+        }
+    });
 }

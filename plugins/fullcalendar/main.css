@@ -33,18 +33,18 @@
     border-spacing: 0;
     font-size: 1em; /* normalize cross-browser */
   }
-.fc tr th:nth-child(6),th:nth-child(7){
-    text-align: center;
-    background-color: #a5acab85;
-    color: rgb(255, 255, 255);
+  .fc th:nth-child(n+6) {
+    background-color: rgb(230, 219, 219);
+    color: rgb(255, 253, 253);
   }
   .fc th{
-    text-align: center;
+    text-align: left;
   }
 .fc th,
   .fc td {
     vertical-align: top;
     padding: 0;
+    font-size: 15px;
   }
 .fc a[data-navlink] {
     cursor: pointer;
